@@ -14,7 +14,7 @@ namespace MvcKutuphane.Controllers
         public ActionResult Index()
         {
             var duyuru = db.TblDuyurular.ToList();
-            return View(duyuru);
+            return View(duyuru); 
         }
         [HttpGet]
         public ActionResult DuyuruEkle()
