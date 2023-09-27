@@ -1,0 +1,28 @@
+﻿@model MvcKutuphane.Models.Entity.TblAdmin
+@{
+    ViewBag.Title = "AdminGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("AdminGuncelle", "Admin", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        <div>
+            <label>Kitap ID</label>
+            @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+            <br />
+            <label>Kitap Ad</label>
+            @Html.TextBoxFor(x => x.Kullanici, new { @class = "form-control" })
+            <br />
+            <label>Kitap Yazar</label>
+            @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
+            <br />
+            <label>Kitap Kategori</label>
+            @Html.TextBoxFor(x => x.Yetki, new { @class = "form-control" })
+        </div>
+        <br />
+        <button class="btn btn-info">Admin Bilgilerini Güncelle</button>
+    </div>
+}
+

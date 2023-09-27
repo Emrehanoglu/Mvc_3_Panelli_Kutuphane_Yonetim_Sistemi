@@ -1,0 +1,35 @@
+﻿@model MvcKutuphane.Models.Entity.TblHareket
+@{
+    ViewBag.Title = "OduncVer";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div style="margin-bottom:15px"></div>
+    <div style="margin-bottom:15px">
+        <label>Üye Id</label>
+        @*@Html.TextBoxFor(x => x.UYE, new { @class = "form-control" })*@
+        @Html.DropDownListFor(x => x.TblUyeler.ID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        <label>Kitap Id</label>
+        @*@Html.TextBoxFor(x => x.KITAP, new { @class = "form-control" })*@
+        @Html.DropDownListFor(x => x.TblKitap.ID, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        <label>Personel Id</label>
+        @*@Html.TextBoxFor(x => x.PERSONEL, new { @class = "form-control" })*@
+        @Html.DropDownListFor(x => x.TblPersonel.ID, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        <label>Kitap Alış Tarihi</label>
+        <input type="text" class="form-control" name="ALISTARIH" value="@DateTime.Now.ToShortDateString()"/>
+    </div>
+    <div style="margin-bottom:15px">
+        <label>Kitap İade Tarihi</label>
+        <input type="text" class="form-control" name="IADETARIH" value="@DateTime.Now.AddDays(7).ToShortDateString()" />
+    </div>
+    <input type="hidden" name="ISLEMDURUM" value="False"/>
+    <button class="btn btn-group" style="background-color : #6c14a8; color:white">Ödünç Ver</button>
+</form>
+

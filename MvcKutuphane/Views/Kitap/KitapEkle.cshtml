@@ -1,0 +1,37 @@
+﻿@model MvcKutuphane.Models.Entity.TblKitap
+@{
+    ViewBag.Title = "KitapEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div style="margin-bottom:15px"></div>
+    <div style="margin-bottom:15px">
+        <label>Kitap Adı</label>
+        @Html.TextBoxFor(x => x.AD, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        <label>Kitap Yazar</label>
+        @Html.DropDownListFor(x => x.TblYazar.ID, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        <label>Kitap Kategori</label>
+        @Html.DropDownListFor(x => x.TblKategori.ID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        <label>Basım Yılı</label>
+        @Html.TextBoxFor(x => x.BASIMYIL, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        <label>Yayınevi</label>
+        @Html.TextBoxFor(x => x.YAYINEVI, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        <label>Sayfa Sayısı</label>
+        @Html.TextBoxFor(x => x.SAYFA, new { @class = "form-control" })
+    </div>
+    <input type="hidden" name="DURUM" value="True"/>
+    <button class="btn btn-info">Kitap Ekle</button>
+</form>
+
+

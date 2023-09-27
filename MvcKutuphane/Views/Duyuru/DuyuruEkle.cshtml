@@ -1,0 +1,21 @@
+﻿@model MvcKutuphane.Models.Entity.TblDuyurular
+@{
+    ViewBag.Title = "DuyuruEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div style="margin-bottom:15px"></div>
+    <div style="margin-bottom:15px">
+        <label>Duyuru Kategori</label>
+        @Html.TextBoxFor(x => x.KATEGORI, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        <label>İçerik</label>
+        @Html.TextAreaFor(x => x.ICERİK, new { @class = "form-control" })
+    </div>
+    <input type="text" class="form-control" name="TARIH" value="@DateTime.Now.ToShortDateString()" />
+    <br />
+    <button class="btn btn-info">Duyuru Ekle</button>
+</form>
+
